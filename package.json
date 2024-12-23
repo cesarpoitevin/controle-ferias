@@ -2,9 +2,9 @@
     "name": "meu-app",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "script.js",
     "scripts": {
-      "start": "node index.js", // Ou "nodemon index.js" para reinicializar automaticamente em desenvolvimento
+      "start": "node script.js", // Ou "nodemon index.js" para reinicializar automaticamente em desenvolvimento
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
