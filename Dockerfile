@@ -1,12 +1,20 @@
-FROM node:18-alpine # Use uma imagem base Node.js
+# Usa uma imagem base Node.js com versão específica e base Alpine Linux (mais leve)
+FROM node:18-alpine
 
-WORKDIR /app # Define o diretório de trabalho dentro do contêiner
+# Define o diretório de trabalho dentro do contêiner
+WORKDIR /app
 
-COPY package*.json ./ # Copia os arquivos package.json e package-lock.json
-RUN npm install # Instala as dependências
+# Copia os arquivos package.json e package-lock.json (ou yarn.lock se usar yarn)
+COPY package*.json ./
 
-COPY . . # Copia o restante do código do seu projeto
+# Instala as dependências (usando --omit=dev para produção, opcional)
+RUN npm install --omit=dev
 
-EXPOSE 3000 # Expõe a porta que seu aplicativo usa
+# Copia o restante do código do seu projeto
+COPY . .
 
-CMD ["npm", "start"] # Comando para iniciar o aplicativo
+# Expõe a porta que seu aplicativo usa (geralmente 3000, ajuste se necessário)
+EXPOSE 3000
+
+# Comando para iniciar o aplicativo (ajuste conforme necessário)
+CMD ["npm", "start"]
