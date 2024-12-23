@@ -4,10 +4,10 @@
     "description": "",
     "main": "script.js",
     "scripts": {
-      "start": "node script.js", // Ou "nodemon index.js" para reinicializar automaticamente em desenvolvimento
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node script.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
-      "express": "^4.18.2"
+        "express": "^4.18.2"
     }
-  }
+}
